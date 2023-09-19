@@ -9,7 +9,7 @@
 npm install iztro iztro-hook -S
 ```
 
-## 参数
+## 参数 (parameters)
 
 ```
 export type IztroInput = {
@@ -24,7 +24,7 @@ export type IztroInput = {
 
 - `GenderName` 的定义在 [iztro 开发文档 -> GenderName](https://docs.iztro.com/type-definition.html#gendername) 里。
 
-## hook 定义
+## hook 定义 (hook defination)
 
 ```
 type useIztro = (input: IztroInput) => {
@@ -37,7 +37,7 @@ type useIztro = (input: IztroInput) => {
 - `FunctionalAstrolabe` 的定义在 [iztro 开发文档 -> FunctionalAstrolabe](https://docs.iztro.com/posts/astrolabe.html#functionalastrolabe) 里。
 - `Horoscope` 的定义在 [iztro 开发文档 -> Horoscope](https://docs.iztro.com/type-definition.html#horoscope) 里。
 
-## 使用
+## 使用 (how to use?)
 
 该 `hook` 只能在 `react` 组件中使用，如果你的项目不是使用 `react` 框架开发的，请使用 [`iztro`](https://github.com/SylarLong/iztro) 自行封装。
 
