@@ -1,3 +1,4 @@
+import { Language } from 'iztro/lib/data/types';
 import { GenderName } from 'iztro/lib/i18n';
 
 export type IztroInput = {
@@ -7,4 +8,5 @@ export type IztroInput = {
   birthdayType: 'lunar' | 'solar';
   isLeapMonth?: boolean;
   fixLeap?: boolean;
+  lang?: Language;
 };
