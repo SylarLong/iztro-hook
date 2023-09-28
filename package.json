@@ -39,7 +39,7 @@
   },
   "homepage": "https://docs.iztro.com",
   "dependencies": {
-    "iztro": "^1.2.5"
+    "iztro": "^1.2.6"
   },
   "devDependencies": {
     "@testing-library/react-hooks": "^8.0.1",
