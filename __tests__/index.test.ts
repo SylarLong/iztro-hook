@@ -83,10 +83,12 @@ describe('Test useIztro hook', () => {
       '夫妻',
     ]);
     expect(horoscopeValue?.yearly).toHaveProperty('mutagen', ['破军', '巨门', '太阴', '贪狼']);
-    expect(horoscopeValue?.monthly).toHaveProperty('index', 1);
+    expect(horoscopeValue?.monthly).toHaveProperty('index', 3);
     expect(horoscopeValue?.monthly).toHaveProperty('heavenlyStem', '庚');
     expect(horoscopeValue?.monthly).toHaveProperty('earthlyBranch', '申');
     expect(horoscopeValue?.monthly).toHaveProperty('palaceNames', [
+      '子女',
+      '夫妻',
       '兄弟',
       '命宫',
       '父母',
@@ -97,14 +99,14 @@ describe('Test useIztro hook', () => {
       '迁移',
       '疾厄',
       '财帛',
-      '子女',
-      '夫妻',
     ]);
     expect(horoscopeValue?.monthly).toHaveProperty('mutagen', ['太阳', '武曲', '太阴', '天同']);
-    expect(horoscopeValue?.daily).toHaveProperty('index', 4);
+    expect(horoscopeValue?.daily).toHaveProperty('index', 6);
     expect(horoscopeValue?.daily).toHaveProperty('heavenlyStem', '己');
     expect(horoscopeValue?.daily).toHaveProperty('earthlyBranch', '酉');
     expect(horoscopeValue?.daily).toHaveProperty('palaceNames', [
+      '迁移',
+      '疾厄',
       '财帛',
       '子女',
       '夫妻',
@@ -115,14 +117,14 @@ describe('Test useIztro hook', () => {
       '田宅',
       '官禄',
       '仆役',
-      '迁移',
-      '疾厄',
     ]);
     expect(horoscopeValue?.daily).toHaveProperty('mutagen', ['武曲', '贪狼', '天梁', '文曲']);
-    expect(horoscopeValue?.hourly).toHaveProperty('index', 6);
+    expect(horoscopeValue?.hourly).toHaveProperty('index', 8);
     expect(horoscopeValue?.hourly).toHaveProperty('heavenlyStem', '丙');
     expect(horoscopeValue?.hourly).toHaveProperty('earthlyBranch', '寅');
     expect(horoscopeValue?.hourly).toHaveProperty('palaceNames', [
+      '官禄',
+      '仆役',
       '迁移',
       '疾厄',
       '财帛',
@@ -133,8 +135,6 @@ describe('Test useIztro hook', () => {
       '父母',
       '福德',
       '田宅',
-      '官禄',
-      '仆役',
     ]);
     expect(horoscopeValue?.hourly).toHaveProperty('mutagen', ['天同', '天机', '文昌', '廉贞']);
 
@@ -225,10 +225,12 @@ describe('Test useIztro hook', () => {
       '夫妻',
     ]);
     expect(horoscopeValue?.yearly).toHaveProperty('mutagen', ['破军', '巨门', '太阴', '贪狼']);
-    expect(horoscopeValue?.monthly).toHaveProperty('index', 1);
+    expect(horoscopeValue?.monthly).toHaveProperty('index', 3);
     expect(horoscopeValue?.monthly).toHaveProperty('heavenlyStem', '庚');
     expect(horoscopeValue?.monthly).toHaveProperty('earthlyBranch', '申');
     expect(horoscopeValue?.monthly).toHaveProperty('palaceNames', [
+      '子女',
+      '夫妻',
       '兄弟',
       '命宫',
       '父母',
@@ -239,14 +241,14 @@ describe('Test useIztro hook', () => {
       '迁移',
       '疾厄',
       '财帛',
-      '子女',
-      '夫妻',
     ]);
     expect(horoscopeValue?.monthly).toHaveProperty('mutagen', ['太阳', '武曲', '太阴', '天同']);
-    expect(horoscopeValue?.daily).toHaveProperty('index', 4);
+    expect(horoscopeValue?.daily).toHaveProperty('index', 6);
     expect(horoscopeValue?.daily).toHaveProperty('heavenlyStem', '己');
     expect(horoscopeValue?.daily).toHaveProperty('earthlyBranch', '酉');
     expect(horoscopeValue?.daily).toHaveProperty('palaceNames', [
+      '迁移',
+      '疾厄',
       '财帛',
       '子女',
       '夫妻',
@@ -257,14 +259,14 @@ describe('Test useIztro hook', () => {
       '田宅',
       '官禄',
       '仆役',
-      '迁移',
-      '疾厄',
     ]);
     expect(horoscopeValue?.daily).toHaveProperty('mutagen', ['武曲', '贪狼', '天梁', '文曲']);
-    expect(horoscopeValue?.hourly).toHaveProperty('index', 6);
+    expect(horoscopeValue?.hourly).toHaveProperty('index', 8);
     expect(horoscopeValue?.hourly).toHaveProperty('heavenlyStem', '丙');
     expect(horoscopeValue?.hourly).toHaveProperty('earthlyBranch', '寅');
     expect(horoscopeValue?.hourly).toHaveProperty('palaceNames', [
+      '官禄',
+      '仆役',
       '迁移',
       '疾厄',
       '财帛',
@@ -275,8 +277,6 @@ describe('Test useIztro hook', () => {
       '父母',
       '福德',
       '田宅',
-      '官禄',
-      '仆役',
     ]);
     expect(horoscopeValue?.hourly).toHaveProperty('mutagen', ['天同', '天机', '文昌', '廉贞']);
 
