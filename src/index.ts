@@ -3,7 +3,7 @@ import { timeToIndex } from 'iztro/lib/utils';
 import FunctionalAstrolabe from 'iztro/lib/astro/FunctionalAstrolabe';
 import { useEffect, useState } from 'react';
 import { IztroInput } from './index.type';
-import { Horoscope } from 'iztro/lib/data/types';
+import FunctionalHoroscope from 'iztro/lib/astro/FunctionalHoroscope';
 
 export function useIztro(input: IztroInput) {
   const _currentDate = new Date();
@@ -11,7 +11,7 @@ export function useIztro(input: IztroInput) {
   const [astrolabe, _setAstrolabe] = useState<FunctionalAstrolabe>();
   const [_horoscopeDate, _setHoroscopeDate] = useState<string | Date>(_currentDate);
   const [_horoscopeHour, _setHoroscopeHour] = useState<number>(timeToIndex(_currentHour));
-  const [horoscope, _setHoroscope] = useState<Horoscope>();
+  const [horoscope, _setHoroscope] = useState<FunctionalHoroscope>();
   const { birthTime, birthday, birthdayType, fixLeap, isLeapMonth, gender, lang } = input;
 
   useEffect(() => {
