@@ -2222,10 +2222,10 @@ istanbul-reports@^3.1.3:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
 
-iztro@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npmjs.org/iztro/-/iztro-1.3.1.tgz#83c70bd8914ece64b7867d278b90c46ac4afb7fb"
-  integrity sha512-zUbHNkU4tSPZtagXLO8enoCCGqAiEGSKTZyCyAUV7ObVhcPaM096m8/hU0/LJAyvxwzPtMXWn6rxlOe/BA4Glw==
+iztro@1.3.2:
+  version "1.3.2"
+  resolved "https://registry.npmjs.org/iztro/-/iztro-1.3.2.tgz#1271c6b5bd0394fe0377983bd62b45fff64304ec"
+  integrity sha512-UqRHYzGDnVnXL/TQBwOYn9sbLRTgR3yGh1XZWlWkjNe8eyYULEyLg0lEOrW8dpdRqBQKSuFmKVmJyRksBECotA==
   dependencies:
     dayjs "^1.11.10"
     i18next "^23.5.1"
