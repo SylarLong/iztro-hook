@@ -8,7 +8,7 @@
 
 <div align="center">
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/b57f0e6e2e8875ce39ae/maintainability)](https://codeclimate.com/github/SylarLong/iztro-hook/maintainability) 
+[![Maintainability](https://api.codeclimate.com/v1/badges/b75ef26b3d7dae3460e9/maintainability)](https://codeclimate.com/github/SylarLong/iztro-hook/maintainability)
 [![Codecov](https://github.com/SylarLong/iztro-hook/actions/workflows/Codecov.yml/badge.svg)](https://github.com/SylarLong/iztro-hook/actions/workflows/Codecov.yml)
 [![npm](https://img.shields.io/npm/v/iztro-hook?logo=npm&logoColor=%23CB3837)](https://www.npmjs.com/package/iztro-hook) 
 ![Codecov](https://img.shields.io/codecov/c/github/SylarLong/iztro-hook?logo=codecov&logoColor=%23F01F7A) 
