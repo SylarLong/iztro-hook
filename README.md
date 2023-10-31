@@ -31,9 +31,11 @@
 npm install iztro iztro-hook -S
 ```
 
+你可以用任何你熟悉的包管理软件来安装依赖。
+
 ## 参数 (parameters)
 
-```
+```ts
 export type IztroInput = {
   birthday: string;
   birthTime: number;
@@ -48,7 +50,7 @@ export type IztroInput = {
 
 ## hook 定义 (hook defination)
 
-```
+```ts
 type useIztro = (input: IztroInput) => {
   astrolabe: FunctionalAstrolabe | undefined;
   horoscope: Horoscope | undefined;
