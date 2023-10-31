@@ -1,4 +1,26 @@
-# iztro-hook
+<div align="center">
+
+# react-hook
+
+紫微斗数开源库iztro的react钩子函数。
+
+</div>
+
+<div align="center">
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/b57f0e6e2e8875ce39ae/maintainability)](https://codeclimate.com/github/SylarLong/iztro-hook/maintainability) 
+[![Codecov](https://github.com/SylarLong/iztro-hook/actions/workflows/Codecov.yml/badge.svg)](https://github.com/SylarLong/iztro-hook/actions/workflows/Codecov.yml)
+[![npm](https://img.shields.io/npm/v/iztro-hook?logo=npm&logoColor=%23CB3837)](https://www.npmjs.com/package/iztro-hook) 
+![Codecov](https://img.shields.io/codecov/c/github/SylarLong/iztro-hook?logo=codecov&logoColor=%23F01F7A) 
+[![npm](https://img.shields.io/npm/dw/iztro-hook?logo=npm&logoColor=%23CB3837)](https://www.npmjs.com/package/iztro-hook) 
+[![GitHub](https://img.shields.io/github/license/sylarlong/iztro-hook)](https://www.npmjs.com/package/iztro-hook) 
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/SylarLong/iztro-hook)](https://www.npmjs.com/package/iztro-hook) 
+[![Package Quality](https://packagequality.com/shield/iztro-hook.svg)](https://packagequality.com/#?package=iztro-hook) 
+
+</div>
+
+---
+
 
 基于 [`iztro`](https://github.com/SylarLong/iztro) 实现的 `react hook`。
 用于获取紫微斗数星盘数据，运限数据（大小限，流年，流月，流日，流时等）。详细功能请查看 [iztro开发文档](https://docs.iztro.com)
