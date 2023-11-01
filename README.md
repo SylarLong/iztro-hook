@@ -12,7 +12,7 @@
 [![Codecov](https://github.com/SylarLong/iztro-hook/actions/workflows/Codecov.yml/badge.svg)](https://github.com/SylarLong/iztro-hook/actions/workflows/Codecov.yml)
 [![npm](https://img.shields.io/npm/v/iztro-hook?logo=npm&logoColor=%23CB3837)](https://www.npmjs.com/package/iztro-hook) 
 ![Codecov](https://img.shields.io/codecov/c/github/SylarLong/iztro-hook?logo=codecov&logoColor=%23F01F7A) 
-[![npm](https://img.shields.io/npm/dw/iztro-hook?logo=npm&logoColor=%23CB3837)](https://www.npmjs.com/package/iztro-hook) 
+[![npm](https://img.shields.io/npm/dt/iztro-hook?logo=npm&logoColor=%23CB3837)](https://www.npmjs.com/package/iztro-hook) 
 [![GitHub](https://img.shields.io/github/license/sylarlong/iztro-hook)](https://www.npmjs.com/package/iztro-hook) 
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/SylarLong/iztro-hook)](https://www.npmjs.com/package/iztro-hook) 
 [![Package Quality](https://packagequality.com/shield/iztro-hook.svg)](https://packagequality.com/#?package=iztro-hook) 
