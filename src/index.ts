@@ -22,14 +22,14 @@ export function useIztro(input: IztroInput) {
     }
 
     if (birthdayType === 'lunar') {
-      const data = astro.astrolabeByLunarDate(birthday, birthTime, gender, isLeapMonth, fixLeap);
+      const data = astro.byLunar(birthday, birthTime, gender, isLeapMonth, fixLeap);
 
       _setAstrolabe(data);
 
       return;
     }
 
-    const data = astro.astrolabeBySolarDate(birthday, birthTime, gender, fixLeap, lang);
+    const data = astro.bySolar(birthday, birthTime, gender, fixLeap, lang);
 
     _setAstrolabe(data);
   }, [birthTime, birthday, birthdayType, fixLeap, isLeapMonth, gender, lang]);
