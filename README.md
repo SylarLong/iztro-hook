@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📦 react-hook
+# 📦 iztro-hook
 
 紫微斗数开源库iztro的react钩子函数。
 
