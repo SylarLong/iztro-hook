@@ -299,4 +299,62 @@ describe('Test useIztro hook', () => {
     expect(result.current.horoscope?.age).toHaveProperty('index', 7);
     expect(result.current.horoscope?.age).toHaveProperty('nominalAge', 26);
   });
+
+  it('useIztro() with `normal` year divide', async () => {
+    const { result } = renderHook(() =>
+      useIztro({
+        birthday: '1999-12-29',
+        birthdayType: 'lunar',
+        birthTime: 2,
+        gender: '女',
+        fixLeap: true,
+        isLeapMonth: true,
+        options: {
+          yearDivide: 'normal',
+        },
+      }),
+    );
+
+    const { current } = result;
+
+    expect(current.astrolabe).toHaveProperty('solarDate', '2000-2-4');
+    expect(current.astrolabe).toHaveProperty('lunarDate', '一九九九年腊月廿九');
+    expect(current.astrolabe).toHaveProperty('chineseDate', '己卯 丁丑 壬辰 壬寅');
+    expect(current.astrolabe).toHaveProperty('time', '寅时');
+    expect(current.astrolabe).toHaveProperty('zodiac', '兔');
+    expect(current.astrolabe).toHaveProperty('earthlyBranchOfSoulPalace', '亥');
+    expect(current.astrolabe).toHaveProperty('earthlyBranchOfBodyPalace', '卯');
+    expect(current.astrolabe).toHaveProperty('soul', '巨门');
+    expect(current.astrolabe).toHaveProperty('body', '天同');
+    expect(current.astrolabe).toHaveProperty('fiveElementsClass', '火六局');
+  });
+
+  it('useIztro() with `exact` year divide', async () => {
+    const { result } = renderHook(() =>
+      useIztro({
+        birthday: '1999-12-29',
+        birthdayType: 'lunar',
+        birthTime: 2,
+        gender: '女',
+        fixLeap: true,
+        isLeapMonth: true,
+        options: {
+          yearDivide: 'exact',
+        },
+      }),
+    );
+
+    const { current } = result;
+
+    expect(current.astrolabe).toHaveProperty('solarDate', '2000-2-4');
+    expect(current.astrolabe).toHaveProperty('lunarDate', '一九九九年腊月廿九');
+    expect(current.astrolabe).toHaveProperty('chineseDate', '庚辰 丁丑 壬辰 壬寅');
+    expect(current.astrolabe).toHaveProperty('time', '寅时');
+    expect(current.astrolabe).toHaveProperty('zodiac', '龙');
+    expect(current.astrolabe).toHaveProperty('earthlyBranchOfSoulPalace', '亥');
+    expect(current.astrolabe).toHaveProperty('earthlyBranchOfBodyPalace', '卯');
+    expect(current.astrolabe).toHaveProperty('soul', '巨门');
+    expect(current.astrolabe).toHaveProperty('body', '文昌');
+    expect(current.astrolabe).toHaveProperty('fiveElementsClass', '土五局');
+  });
 });

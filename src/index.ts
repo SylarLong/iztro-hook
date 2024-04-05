@@ -12,7 +12,7 @@ export function useIztro(input: IztroInput) {
   const [_horoscopeDate, _setHoroscopeDate] = useState<string | Date>(_currentDate);
   const [_horoscopeHour, _setHoroscopeHour] = useState<number>(timeToIndex(_currentHour));
   const [horoscope, _setHoroscope] = useState<IFunctionalHoroscope>();
-  const { birthTime, birthday, birthdayType, fixLeap, isLeapMonth, gender, lang } = input;
+  const { birthTime, birthday, birthdayType, fixLeap, isLeapMonth, gender, lang, options } = input;
 
   useEffect(() => {
     const date = new Date(birthday).toString().toLowerCase();
@@ -21,15 +21,15 @@ export function useIztro(input: IztroInput) {
       return undefined;
     }
 
-    if (birthdayType === 'lunar') {
-      const data = astro.byLunar(birthday, birthTime, gender, isLeapMonth, fixLeap);
-
-      _setAstrolabe(data);
-
-      return;
-    }
-
-    const data = astro.bySolar(birthday, birthTime, gender, fixLeap, lang);
+    const data = astro.withOptions({
+      dateStr: birthday,
+      timeIndex: birthTime,
+      gender,
+      type: birthdayType,
+      isLeapMonth,
+      fixLeap,
+      config: options,
+    });
 
     _setAstrolabe(data);
   }, [birthTime, birthday, birthdayType, fixLeap, isLeapMonth, gender, lang]);

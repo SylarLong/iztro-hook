@@ -1,4 +1,4 @@
-import { Language } from 'iztro/lib/data/types';
+import { Config, Language } from 'iztro/lib/data/types';
 import { GenderName } from 'iztro/lib/i18n';
 
 export type IztroInput = {
@@ -9,4 +9,5 @@ export type IztroInput = {
   isLeapMonth?: boolean;
   fixLeap?: boolean;
   lang?: Language;
+  options?: Config;
 };
