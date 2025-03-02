@@ -63,8 +63,8 @@ describe('Test useIztro hook', () => {
       '子女',
     ]);
     expect(horoscopeValue?.decadal).toHaveProperty('mutagen', ['太阳', '武曲', '太阴', '天同']);
-    expect(horoscopeValue?.age).toHaveProperty('index', 10);
-    expect(horoscopeValue?.age).toHaveProperty('nominalAge', 23);
+    expect(horoscopeValue?.age).toHaveProperty('index', 9);
+    expect(horoscopeValue?.age).toHaveProperty('nominalAge', 24);
     expect(horoscopeValue?.yearly).toHaveProperty('index', 1);
     expect(horoscopeValue?.yearly).toHaveProperty('heavenlyStem', '癸');
     expect(horoscopeValue?.yearly).toHaveProperty('earthlyBranch', '卯');
@@ -140,8 +140,8 @@ describe('Test useIztro hook', () => {
 
     const { horoscope } = result.current;
 
-    expect(horoscope?.age).toHaveProperty('index', 9);
-    expect(horoscope?.age).toHaveProperty('nominalAge', 24);
+    expect(horoscope?.age).toHaveProperty('index', 7);
+    expect(horoscope?.age).toHaveProperty('nominalAge', 26);
 
     act(() => {
       result.current.setHoroscope('2034-10-19 3:12');
@@ -205,8 +205,8 @@ describe('Test useIztro hook', () => {
       '子女',
     ]);
     expect(horoscopeValue?.decadal).toHaveProperty('mutagen', ['太阳', '武曲', '太阴', '天同']);
-    expect(horoscopeValue?.age).toHaveProperty('index', 10);
-    expect(horoscopeValue?.age).toHaveProperty('nominalAge', 23);
+    expect(horoscopeValue?.age).toHaveProperty('index', 9);
+    expect(horoscopeValue?.age).toHaveProperty('nominalAge', 24);
     expect(horoscopeValue?.yearly).toHaveProperty('index', 1);
     expect(horoscopeValue?.yearly).toHaveProperty('heavenlyStem', '癸');
     expect(horoscopeValue?.yearly).toHaveProperty('earthlyBranch', '卯');
@@ -282,8 +282,8 @@ describe('Test useIztro hook', () => {
 
     const { horoscope } = result.current;
 
-    expect(horoscope?.age).toHaveProperty('index', 9);
-    expect(horoscope?.age).toHaveProperty('nominalAge', 24);
+    expect(horoscope?.age).toHaveProperty('index', 7);
+    expect(horoscope?.age).toHaveProperty('nominalAge', 26);
 
     act(() => {
       result.current.setHoroscope('2034-10-19 3:12');
@@ -356,5 +356,33 @@ describe('Test useIztro hook', () => {
     expect(current.astrolabe).toHaveProperty('soul', '巨门');
     expect(current.astrolabe).toHaveProperty('body', '文昌');
     expect(current.astrolabe).toHaveProperty('fiveElementsClass', '土五局');
+  });
+
+  it('useIztro() with `birthday` age divide', async () => {
+    const { result } = renderHook(() =>
+      useIztro({
+        birthday: '2000-7-17',
+        birthdayType: 'lunar',
+        birthTime: 2,
+        gender: '女',
+        fixLeap: true,
+        isLeapMonth: true,
+        options: {
+          ageDivide: 'birthday',
+        },
+      }),
+    );
+
+    const { horoscope } = result.current;
+
+    expect(horoscope?.age).toHaveProperty('index', 8);
+    expect(horoscope?.age).toHaveProperty('nominalAge', 25);
+
+    act(() => {
+      result.current.setHoroscope('2034-10-19 3:12');
+    });
+
+    expect(result.current.horoscope?.age).toHaveProperty('index', 10);
+    expect(result.current.horoscope?.age).toHaveProperty('nominalAge', 35);
   });
 });

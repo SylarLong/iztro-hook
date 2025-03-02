@@ -1,6 +1,6 @@
 {
   "name": "iztro-hook",
-  "version": "1.2.19",
+  "version": "1.2.20",
   "description": "A hook of iztro。紫微斗数开源库iztro的react钩子函数。",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -39,7 +39,7 @@
   },
   "homepage": "https://docs.iztro.com",
   "dependencies": {
-    "iztro": "^2.4.4"
+    "iztro": "2.4.5"
   },
   "devDependencies": {
     "@testing-library/react-hooks": "^8.0.1",
