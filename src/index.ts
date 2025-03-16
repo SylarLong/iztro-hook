@@ -28,6 +28,7 @@ export function useIztro(input: IztroInput) {
       type: birthdayType,
       isLeapMonth,
       fixLeap,
+      language: lang,
       config: options,
     });
 

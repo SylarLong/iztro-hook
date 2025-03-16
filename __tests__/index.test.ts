@@ -300,6 +300,148 @@ describe('Test useIztro hook', () => {
     expect(result.current.horoscope?.age).toHaveProperty('nominalAge', 26);
   });
 
+  it('useIztro() solar with ko-KR', async () => {
+    const { result } = renderHook(() =>
+      useIztro({
+        birthday: '2000-8-16',
+        birthdayType: 'solar',
+        birthTime: 2,
+        gender: '女',
+        fixLeap: true,
+        lang: 'ko-KR',
+      }),
+    );
+
+    const { current } = result;
+
+    expect(current.astrolabe).toHaveProperty('solarDate', '2000-8-16');
+    expect(current.astrolabe).toHaveProperty('lunarDate', '二〇〇〇年七月十七');
+    expect(current.astrolabe).toHaveProperty('chineseDate', '경진 갑신 병오 경인');
+    expect(current.astrolabe).toHaveProperty('time', '인시');
+    expect(current.astrolabe).toHaveProperty('sign', '사자궁');
+    expect(current.astrolabe).toHaveProperty('zodiac', '용');
+    expect(current.astrolabe).toHaveProperty('earthlyBranchOfSoulPalace', '오');
+    expect(current.astrolabe).toHaveProperty('earthlyBranchOfBodyPalace', '술');
+    expect(current.astrolabe).toHaveProperty('soul', '파군');
+    expect(current.astrolabe).toHaveProperty('body', '문창');
+    expect(current.astrolabe).toHaveProperty('fiveElementsClass', '목삼국');
+
+    const horoscopeValue = current?.astrolabe?.horoscope('2023-8-19 3:12');
+
+    expect(horoscopeValue).toHaveProperty('solarDate', '2023-8-19');
+    expect(horoscopeValue?.decadal).toHaveProperty('index', 2);
+    expect(horoscopeValue?.decadal).toHaveProperty('heavenlyStem', '경');
+    expect(horoscopeValue?.decadal).toHaveProperty('earthlyBranch', '진');
+    expect(horoscopeValue?.decadal).toHaveProperty('palaceNames', [
+      '부처',
+      '형제',
+      '명궁',
+      '부모',
+      '복덕',
+      '전택',
+      '관록',
+      '노복',
+      '천이',
+      '질액',
+      '재백',
+      '자녀',
+    ]);
+    expect(horoscopeValue?.decadal).toHaveProperty('mutagen', ['태양', '무곡', '태음', '천동']);
+    expect(horoscopeValue?.age).toHaveProperty('index', 9);
+    expect(horoscopeValue?.age).toHaveProperty('nominalAge', 24);
+    expect(horoscopeValue?.yearly).toHaveProperty('index', 1);
+    expect(horoscopeValue?.yearly).toHaveProperty('heavenlyStem', '계');
+    expect(horoscopeValue?.yearly).toHaveProperty('earthlyBranch', '묘');
+    expect(horoscopeValue?.yearly).toHaveProperty('palaceNames', [
+      '형제',
+      '명궁',
+      '부모',
+      '복덕',
+      '전택',
+      '관록',
+      '노복',
+      '천이',
+      '질액',
+      '재백',
+      '자녀',
+      '부처',
+    ]);
+    expect(horoscopeValue?.yearly).toHaveProperty('mutagen', ['파군', '거문', '태음', '탐랑']);
+    expect(horoscopeValue?.monthly).toHaveProperty('index', 3);
+    expect(horoscopeValue?.monthly).toHaveProperty('heavenlyStem', '경');
+    expect(horoscopeValue?.monthly).toHaveProperty('earthlyBranch', '신');
+    expect(horoscopeValue?.monthly).toHaveProperty('palaceNames', [
+      '자녀',
+      '부처',
+      '형제',
+      '명궁',
+      '부모',
+      '복덕',
+      '전택',
+      '관록',
+      '노복',
+      '천이',
+      '질액',
+      '재백',
+    ]);
+    expect(horoscopeValue?.monthly).toHaveProperty('mutagen', ['태양', '무곡', '태음', '천동']);
+    expect(horoscopeValue?.daily).toHaveProperty('index', 6);
+    expect(horoscopeValue?.daily).toHaveProperty('heavenlyStem', '기');
+    expect(horoscopeValue?.daily).toHaveProperty('earthlyBranch', '유');
+    expect(horoscopeValue?.daily).toHaveProperty('palaceNames', [
+      '천이',
+      '질액',
+      '재백',
+      '자녀',
+      '부처',
+      '형제',
+      '명궁',
+      '부모',
+      '복덕',
+      '전택',
+      '관록',
+      '노복',
+    ]);
+    expect(horoscopeValue?.daily).toHaveProperty('mutagen', ['무곡', '탐랑', '천량', '문곡']);
+    expect(horoscopeValue?.hourly).toHaveProperty('index', 8);
+    expect(horoscopeValue?.hourly).toHaveProperty('heavenlyStem', '병');
+    expect(horoscopeValue?.hourly).toHaveProperty('earthlyBranch', '인');
+    expect(horoscopeValue?.hourly).toHaveProperty('palaceNames', [
+      '관록',
+      '노복',
+      '천이',
+      '질액',
+      '재백',
+      '자녀',
+      '부처',
+      '형제',
+      '명궁',
+      '부모',
+      '복덕',
+      '전택',
+    ]);
+    expect(horoscopeValue?.hourly).toHaveProperty('mutagen', ['천동', '천기', '문창', '염정']);
+
+    const { horoscope } = result.current;
+
+    expect(horoscope?.age).toHaveProperty('index', 7);
+    expect(horoscope?.age).toHaveProperty('nominalAge', 26);
+
+    act(() => {
+      result.current.setHoroscope('2034-10-19 3:12');
+    });
+
+    expect(result.current.horoscope?.age).toHaveProperty('index', 10);
+    expect(result.current.horoscope?.age).toHaveProperty('nominalAge', 35);
+
+    act(() => {
+      result.current.setHoroscope('2025-10-19', 2);
+    });
+
+    expect(result.current.horoscope?.age).toHaveProperty('index', 7);
+    expect(result.current.horoscope?.age).toHaveProperty('nominalAge', 26);
+  });
+
   it('useIztro() with `normal` year divide', async () => {
     const { result } = renderHook(() =>
       useIztro({
@@ -309,6 +451,7 @@ describe('Test useIztro hook', () => {
         gender: '女',
         fixLeap: true,
         isLeapMonth: true,
+        lang: 'zh-CN',
         options: {
           yearDivide: 'normal',
         },
@@ -338,6 +481,7 @@ describe('Test useIztro hook', () => {
         gender: '女',
         fixLeap: true,
         isLeapMonth: true,
+        lang: 'zh-CN',
         options: {
           yearDivide: 'exact',
         },
@@ -367,6 +511,7 @@ describe('Test useIztro hook', () => {
         gender: '女',
         fixLeap: true,
         isLeapMonth: true,
+        lang: 'zh-CN',
         options: {
           ageDivide: 'birthday',
         },
