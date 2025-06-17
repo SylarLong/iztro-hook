@@ -9,5 +9,6 @@ export type IztroInput = {
   isLeapMonth?: boolean;
   fixLeap?: boolean;
   lang?: Language;
+  astroType?: 'heaven' | 'earth' | 'human';
   options?: Config;
 };
