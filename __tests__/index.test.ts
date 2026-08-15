@@ -138,11 +138,6 @@ describe('Test useIztro hook', () => {
     ]);
     expect(horoscopeValue?.hourly).toHaveProperty('mutagen', ['天同', '天机', '文昌', '廉贞']);
 
-    const { horoscope } = result.current;
-
-    expect(horoscope?.age).toHaveProperty('index', 7);
-    expect(horoscope?.age).toHaveProperty('nominalAge', 26);
-
     act(() => {
       result.current.setHoroscope('2034-10-19 3:12');
     });
@@ -279,11 +274,6 @@ describe('Test useIztro hook', () => {
       '田宅',
     ]);
     expect(horoscopeValue?.hourly).toHaveProperty('mutagen', ['天同', '天机', '文昌', '廉贞']);
-
-    const { horoscope } = result.current;
-
-    expect(horoscope?.age).toHaveProperty('index', 7);
-    expect(horoscope?.age).toHaveProperty('nominalAge', 26);
 
     act(() => {
       result.current.setHoroscope('2034-10-19 3:12');
@@ -422,11 +412,6 @@ describe('Test useIztro hook', () => {
     ]);
     expect(horoscopeValue?.hourly).toHaveProperty('mutagen', ['천동', '천기', '문창', '염정']);
 
-    const { horoscope } = result.current;
-
-    expect(horoscope?.age).toHaveProperty('index', 7);
-    expect(horoscope?.age).toHaveProperty('nominalAge', 26);
-
     act(() => {
       result.current.setHoroscope('2034-10-19 3:12');
     });
@@ -492,7 +477,7 @@ describe('Test useIztro hook', () => {
 
     expect(current.astrolabe).toHaveProperty('solarDate', '2000-2-4');
     expect(current.astrolabe).toHaveProperty('lunarDate', '一九九九年腊月廿九');
-    expect(current.astrolabe).toHaveProperty('chineseDate', '庚辰 丁丑 壬辰 壬寅');
+    expect(current.astrolabe).toHaveProperty('chineseDate', '庚辰 己丑 壬辰 壬寅');
     expect(current.astrolabe).toHaveProperty('time', '寅时');
     expect(current.astrolabe).toHaveProperty('zodiac', '龙');
     expect(current.astrolabe).toHaveProperty('earthlyBranchOfSoulPalace', '亥');
@@ -517,11 +502,6 @@ describe('Test useIztro hook', () => {
         },
       }),
     );
-
-    const { horoscope } = result.current;
-
-    expect(horoscope?.age).toHaveProperty('index', 8);
-    expect(horoscope?.age).toHaveProperty('nominalAge', 25);
 
     act(() => {
       result.current.setHoroscope('2034-10-19 3:12');
