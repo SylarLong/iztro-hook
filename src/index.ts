@@ -44,7 +44,7 @@ export function useIztro(input: IztroInput) {
     });
 
     _setAstrolabe(data);
-  }, [birthTime, birthday, birthdayType, fixLeap, isLeapMonth, gender, lang, astroType]);
+  }, [birthTime, birthday, birthdayType, fixLeap, isLeapMonth, gender, lang, astroType, options]);
 
   useEffect(() => {
     if (astrolabe) {
