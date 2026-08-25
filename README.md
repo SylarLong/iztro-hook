@@ -72,7 +72,7 @@ import { useIztro } from 'iztro-hook';
 
 export default App() {
   const { astrolabe, horoscope, setHoroscope } = useIztro({
-    birthday: '2000-18-16',
+    birthday: '2000-8-16',
     birthdayType: 'solar',
     birthTime: 2,
     gender: '女',
