@@ -23,6 +23,7 @@ export function useIztro(input: IztroInput) {
     options,
     astroType,
   } = input;
+  const optionsKey = JSON.stringify(options);
 
   useEffect(() => {
     const date = new Date(birthday).toString().toLowerCase();
@@ -44,7 +45,7 @@ export function useIztro(input: IztroInput) {
     });
 
     _setAstrolabe(data);
-  }, [birthTime, birthday, birthdayType, fixLeap, isLeapMonth, gender, lang, astroType, options]);
+  }, [birthTime, birthday, birthdayType, fixLeap, isLeapMonth, gender, lang, astroType, optionsKey]);
 
   useEffect(() => {
     if (astrolabe) {

@@ -305,7 +305,7 @@ describe('Test useIztro hook', () => {
     const { current } = result;
 
     expect(current.astrolabe).toHaveProperty('solarDate', '2000-8-16');
-    expect(current.astrolabe).toHaveProperty('lunarDate', '二〇〇〇年七月十七');
+    expect(current.astrolabe).toHaveProperty('lunarDate', '음력 2000년 7월 17일');
     expect(current.astrolabe).toHaveProperty('chineseDate', '경진 갑신 병오 경인');
     expect(current.astrolabe).toHaveProperty('time', '인시');
     expect(current.astrolabe).toHaveProperty('sign', '사자궁');
@@ -509,5 +509,24 @@ describe('Test useIztro hook', () => {
 
     expect(result.current.horoscope?.age).toHaveProperty('index', 10);
     expect(result.current.horoscope?.age).toHaveProperty('nominalAge', 35);
+  });
+
+  it('does not recalculate when inline options are unchanged', () => {
+    const { result, rerender } = renderHook(() =>
+      useIztro({
+        birthday: '2000-8-16',
+        birthdayType: 'solar',
+        birthTime: 2,
+        gender: '女',
+        options: {
+          yearDivide: 'normal',
+        },
+      }),
+    );
+    const astrolabe = result.current.astrolabe;
+
+    rerender();
+
+    expect(result.current.astrolabe).toBe(astrolabe);
   });
 });
